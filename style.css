@@ -2,12 +2,15 @@ body {
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 5fr;
+    grid-template-areas: "sidebar header"
+                         "sidebar content";
     margin: 0;
     font-family: sans-serif;
 }
 
 nav {
     display: grid;
+    grid-area: sidebar;
     grid-template-columns: 1fr 3fr;
     row-gap: 20px;
     align-items: center;
@@ -50,6 +53,8 @@ header {
     padding-top: 10px;
     box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.1);
     padding-bottom: 0px;
+    z-index: 1;
+    grid-area: header;
 }
 
 .searchContainer {
@@ -123,4 +128,75 @@ header {
     height: 35px;
     width: 100px;
     border-radius: 18px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 10fr 3fr;
+    background-color: #E2E8F0;
+    padding: 20px;
+    grid-area: content;
+}
+
+.contentRight {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.trendingContainer, .announcementsContainer{
+    background-color: white;
+    padding: 15px 30px 15px 30px;
+    border-radius: 10px;
+    display: grid;
+}
+
+.announcementsContainer p {
+    font-size: 0.8rem;
+    margin-top: 3px;
+    color: #636363;
+}
+
+.announcementsContainer h4 {
+    margin-bottom: 1px;
+    margin-top: 10px;
+}
+
+.contentRightHeading {
+    margin-bottom: 10px;
+}
+
+.trendingDescription {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.trendingContainer {
+    gap: 15px;
+}
+
+.trendingDetail {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "icon title"
+                         "icon description";
+    column-gap: 10px;
+}
+
+.trendingIcon {
+    grid-area: icon;
+    justify-self: center;
+}
+
+.trendingTitle {
+    grid-area: title;
+    align-self: end;
+    font-weight: bold;
+}
+
+.trendingText {
+    grid-area: description;
+    font-size: 0.9rem;
+    color: #636363;
+    font-style: italic;
 }
