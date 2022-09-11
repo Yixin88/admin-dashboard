@@ -1,6 +1,7 @@
 body {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr;
     margin: 0;
     font-family: sans-serif;
 }
@@ -12,6 +13,7 @@ nav {
     align-items: center;
     background-color: #1993D3;
     grid-row: 1 / end;
+    align-content: start;
 }
 
 .navText {
@@ -39,5 +41,86 @@ nav {
     font-weight: bold;
 }
 
+header {
+    display: grid;
+    grid-column: 2 / end;
+    grid-template-columns: 7fr 4fr;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 0px;
+}
 
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
 
+.searchContainer input {
+    border-radius: 18px;
+    border: none;
+    background-color: #E2E8F0;
+    flex: 1;
+    height: 1.8rem;
+}
+
+.headerTopRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.headerTopRight .portrait {
+    clip-path: circle();
+}
+
+.headerTopRight span {
+    font-weight: bold;
+}
+
+.headerBottomLeft img{
+    clip-path: circle();
+}
+
+.headerBottomLeft {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.headerBottomLeft div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.headerBottomLeft h2 {
+    margin-top: 7px;
+}
+
+.headerBottomLeft span {
+    font-weight: bold;
+}
+
+.headerButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.headerButton button {
+    background-color: #1993D3;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 35px;
+    width: 100px;
+    border-radius: 18px;
+}
