@@ -1,7 +1,7 @@
 body {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 100%;
     grid-template-areas: "sidebar header"
                          "sidebar content";
     margin: 0;
@@ -17,6 +17,7 @@ nav {
     background-color: #1993D3;
     grid-row: 1 / end;
     align-content: start;
+    padding: 10px;
 }
 
 .navText {
@@ -66,10 +67,15 @@ header {
 
 .searchContainer input {
     border-radius: 18px;
-    border: none;
+    border: 1px solid #E2E8F0;
     background-color: #E2E8F0;
     flex: 1;
     height: 1.8rem;
+    padding-left: 10px;
+}
+
+.searchContainer input:hover {
+    border: 1px solid #1993D3;
 }
 
 .headerTopRight {
@@ -136,12 +142,14 @@ main {
     background-color: #E2E8F0;
     padding: 20px;
     grid-area: content;
+    gap: 20px;
 }
 
 .contentRight {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    align-content: start;
 }
 
 .trendingContainer, .announcementsContainer{
@@ -149,6 +157,7 @@ main {
     padding: 15px 30px 15px 30px;
     border-radius: 10px;
     display: grid;
+    box-shadow: rgba(0,0,0,0.2) 5px 5px 10px;
 }
 
 .announcementsContainer p {
@@ -199,4 +208,58 @@ main {
     font-size: 0.9rem;
     color: #636363;
     font-style: italic;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.projectCard {
+    min-height: 250px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border-left: #F0B429 10px solid;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: rgba(0,0,0,0.2) 5px 5px 10px;
+    transition: all .1s ease-in;
+    right: 0;
+    bottom: 0;
+    position: relative;
+}
+
+.projectCard:hover {
+    right: 5px;
+    bottom: 5px;
+    box-shadow: 10px 10px 20px rgba(33,33,33,.5);
+}
+
+.cardLeftBorder {
+    border: none;
+    border-radius: 18px 0 0 18px;
+    background-color: #F0B429;
+}
+
+.projectTitle {
+    align-self: end;
+    margin-bottom: 0px;
+}
+
+.projectDescription {
+    align-self: start;
+    margin-top: 0px;
+    color: #636363;
+}
+
+.cardIconContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    gap: 20px;
 }
